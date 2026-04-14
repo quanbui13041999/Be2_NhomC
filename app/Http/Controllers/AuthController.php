@@ -18,7 +18,20 @@ class AuthController extends Controller
         return view('login');
     }
     // xu ly dang nhap
-    public function login(Request $repuest) {
-        $validate = $repuest->validate(['email'] => 'required|email') 
+    public function login(Request $request) {
+       $validated = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:6',
+        ], [
+            'email.required' => 'Email không được để trống',
+            'email.email' => 'Email không hợp lệ',
+            'password.required' => 'Mật khẩu không được để trống',
+            'password.min' => 'Mật khẩu phải có ít nhất 6 ký tự',
+        ]);
+        if (Auth::attempt($validated)) {
+            $request->session()->regenerate();
+            return redirect('/');
+        }
+
     }
 }
