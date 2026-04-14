@@ -16,6 +16,9 @@ class AuthController extends Controller
             return redirect('/');
         }
         return view('login');
-
+    }
+    // xu ly dang nhap
+    public function login(Request $repuest) {
+        $validate = $repuest->validate(['email'] => 'required|email') 
     }
 }
