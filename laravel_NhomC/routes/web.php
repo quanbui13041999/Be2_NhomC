@@ -1,6 +1,9 @@
 <?php
 
+
 use App\Http\Controllers\listcontroler;
+=======
+use App\Http\Controllers\viewcontroler;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
 
@@ -38,4 +41,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('list', [listcontroler::class, 'listUser'])->name('user.list');
+
+Route::get('view', [viewcontroler::class, 'viewUser'])->name('user.viewUser');
