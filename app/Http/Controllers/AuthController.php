@@ -12,7 +12,7 @@ use Psy\ManualUpdater\Checker;
 class AuthController extends Controller
 {
     // Hiển thị form đăng nhập
-    public function showLoginFormr() {
+    public function showLoginForm() {
         if (Auth::check()) {
             return redirect('/');
         }
@@ -43,6 +43,5 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/');
-
     }
 }
