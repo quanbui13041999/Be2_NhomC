@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\listcontroler;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
 
@@ -36,3 +37,5 @@ Route::get('signout', [CrudUserController::class, 'signOut'])->name('signout');
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('list', [listcontroler::class, 'listUser'])->name('user.list');
