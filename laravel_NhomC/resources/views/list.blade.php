@@ -99,7 +99,7 @@
                 <td>{{ $user->email }}</td>
                 <td class="action-links">
                     <a href="#">Edit</a> | 
-                    <a href="#">View</a> | 
+                   <a href="{{ route('user.viewUser', ['id' => $user->id]) }}">View</a>  | 
                     <a href="#">Delete</a>
                 </td>
             </tr>

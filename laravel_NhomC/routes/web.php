@@ -2,7 +2,6 @@
 
 
 use App\Http\Controllers\listcontroler;
-=======
 use App\Http\Controllers\viewcontroler;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
